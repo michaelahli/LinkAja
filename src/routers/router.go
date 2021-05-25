@@ -11,6 +11,7 @@ func (routes *route) RouterGroup() http.Handler {
 	router.Group(func(r chi.Router) {
 		r.Get("/test-db", routes.ctrl.TestDB)
 		r.Get("/account/{account_number}", routes.ctrl.GetBalance)
+		r.Post("/account/{from_account_number}/transfer", routes.ctrl.TransferBalance)
 	})
 	return router
 }

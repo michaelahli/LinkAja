@@ -12,6 +12,8 @@ type repo struct {
 type Repo interface {
 	FindAll(where interface{}, tableName string, opt *options.FindOptions) (*mongo.Cursor, error)
 	FindOne(res interface{}, where interface{}, tableName string) error
+	InsertOne(data interface{}, tableName string) error
+	UpdateOne(data, filter interface{}, tableName string) error
 }
 
 func NewRepo(db *mongo.Database) Repo {

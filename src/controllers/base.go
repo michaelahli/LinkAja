@@ -11,6 +11,7 @@ type ctrl struct {
 
 type Controllers interface {
 	GetBalance(w http.ResponseWriter, r *http.Request)
+	TransferBalance(w http.ResponseWriter, r *http.Request)
 	TestDB(w http.ResponseWriter, r *http.Request)
 }
 

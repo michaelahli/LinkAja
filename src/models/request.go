@@ -1,6 +1,6 @@
 package models
 
-type TransferBalance struct {
+type TransferBalanceModel struct {
 	ToAccountNumber int `json:"to_account_number"`
 	Amount          int `json:"amount"`
 }

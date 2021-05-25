@@ -23,7 +23,7 @@ func (c *ctrl) GetBalance(w http.ResponseWriter, r *http.Request) {
 
 	res, err := c.uc.GetBalanceInfo(account_number)
 	if err != nil {
-		packages.BasicResponse(w, "Failed to Get Balance", http.StatusNotFound, nil)
+		packages.BasicResponse(w, "Failed to Get Balance", http.StatusNotFound, err)
 		return
 	}
 

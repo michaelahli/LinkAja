@@ -3,6 +3,7 @@ package usecases
 import (
 	"LinkaAja/src/models"
 	"LinkaAja/src/repositories"
+	"net/http"
 )
 
 type uc struct {
@@ -13,6 +14,8 @@ type UC interface {
 	GetAccountID(urlstring string) (int, error)
 	GetAllData() (interface{}, error)
 	GetBalanceInfo(account_number int) (*models.GetBalance, error)
+	TransferBalance(sender int, req *models.TransferBalanceModel) (string, int, error)
+	ProcessTransferRequest(r *http.Request) (*models.TransferBalanceModel, string, int, error)
 }
 
 func NewUC(repo repositories.Repo) UC {
