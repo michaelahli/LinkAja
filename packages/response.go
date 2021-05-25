@@ -7,6 +7,10 @@ import (
 	"net/http"
 )
 
+/*
+	@created at 25 May 2021
+	Method for returning respose JSON
+*/
 func BasicResponse(w http.ResponseWriter, message string, code int, data interface{}) {
 	res := models.BasicResponse{}
 

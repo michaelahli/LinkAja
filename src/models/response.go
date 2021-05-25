@@ -1,5 +1,10 @@
 package models
 
+type AllData struct {
+	Customers []CustomerModel `json:"customers"`
+	Accounts  []AccountModel  `json:"accounts"`
+}
+
 type BasicResponse struct {
 	Code    int         `json:"code"`
 	Message string      `json:"message"`

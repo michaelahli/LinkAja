@@ -6,6 +6,15 @@ import (
 	"net/http"
 )
 
+func (c *ctrl) TestDB(w http.ResponseWriter, r *http.Request) {
+	res, err := c.uc.GetAllData()
+	if err != nil {
+		packages.BasicResponse(w, "failed fetch data", http.StatusInternalServerError, nil)
+		return
+	}
+	packages.BasicResponse(w, "success", http.StatusOK, res)
+}
+
 func (c *ctrl) GetBalance(w http.ResponseWriter, r *http.Request) {
 	account_number, err := c.uc.GetAccountID(r.URL.Path)
 	if err != nil {

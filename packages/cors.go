@@ -8,6 +8,10 @@ import (
 	"github.com/rs/cors"
 )
 
+/*
+	@created at 25 May 2021
+	Method for allowing Cross-Origin Resource
+*/
 func AllowCORS(router http.Handler) http.Handler {
 	origin := strings.Split(os.Getenv("CORS_ORIGIN"), ",")
 	headers := strings.Split(os.Getenv("CORS_HEADER"), ",")
