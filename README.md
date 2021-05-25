@@ -101,6 +101,26 @@ for windows user, after installing MinGW. Please copy the following command and 
     mingw32-make docker
 ```
 
+# Testing
+This project already contain some test unit for usecases's functions. There are 2 different ways to test this projects:
+
+1. Manual test
+2. Automatically using Makefile
+
+## 1. Manual Test
+Manual it means we have to go to test directory manually by changing directory to usecases using this following command:
+```
+    cd src/usecases/
+```
+and then we can start execute unit testing by using command :
+```
+    go test
+```
+## 2. Automatically using Makefile
+We can simply test our application by using the following command :
+```
+    make gorun
+```
 
 # Contributing
 Pull request are welcome. For major changes, please open an issue first to discuss what you would like to change.
