@@ -48,7 +48,7 @@ curl --request POST 'http://localhost:8080/account/{from_account_number}/transfe
 ```
 
 # Usage
-This server can be executed by 3 ways :
+This server can be executed by 4 ways :
 1. Manually from project folder
 2. Manually by docker
 3. Automatically using docker compose file 
