@@ -93,4 +93,4 @@ Pull request are welcome. For major changes, please open an issue first to discu
 Please make sure to update test as appropriate.
 
 # Author
-### This application is written and owned by Michael Ahli
+This application is written and owned by Michael Ahli
