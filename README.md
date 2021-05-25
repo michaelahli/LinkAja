@@ -71,7 +71,7 @@ or we can simply just use Makefile by this following command :
 ## 2. Manually by docker
 First we must have docker installed in our PC. Then we have to build the docker image by using the following command :
 ```
-    docker build --tag michaelahli/linkaja:beta
+    docker build --tag michaelahli/linkaja:beta .
 ```
 OR we can just use image I've uploaded to docker hub public repository by using the following command : 
 ```
