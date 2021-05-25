@@ -81,6 +81,7 @@ func TestGetBalanceInfo(t *testing.T) {
 	db := packages.LoadDatabase()
 	repository := repositories.NewRepo(db)
 	usecase := NewUC(repository)
+
 	type args struct {
 		account_number int
 	}
@@ -98,7 +99,6 @@ func TestGetBalanceInfo(t *testing.T) {
 			want: &models.GetBalance{
 				AccountNumber: 555001,
 				CustomerName:  "Bob Martin",
-				Balance:       10000,
 			},
 			wantErr: false,
 		},
