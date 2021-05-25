@@ -7,7 +7,7 @@ type uc struct {
 }
 
 type UC interface {
-	SampleFunc() error
+	GetAccountID(urlstring string) (int, error)
 }
 
 func NewUC(repo repositories.Repo) UC {
