@@ -54,7 +54,7 @@ This server can be executed by 4 ways :
 3. Automatically using docker compose file 
 4. Automatically using Makefile
 
-## Manually from project folder
+## 1. Manually from project folder
 First thing first we have to install all of the dependencies by typing this command in terminal :
 ```
     go mod tidy
@@ -68,7 +68,7 @@ or we can simply just use Makefile by this following command :
     make gorun
 ```
 
-## Manually by docker
+## 2. Manually by docker
 First we must have docker installed in our PC. Then we have to build the docker image by using the following command :
 ```
     docker build --tag michaelahli/linkaja:beta
@@ -85,13 +85,13 @@ And then we can start our container by using this following command:
 ```
     docker container start linkaja-container
 ```
-## Automatically using docker-compose file
+## 3. Automatically using docker-compose file
 First we have to build/pull docker image according to the instructions above. After we have docker image in our computer, we can simply run this command on our project folder : 
 ```
     docker-compose up -d
 ```
 After this command, our server is started and ready to use.
-## Automatically using Makefile
+## 4. Automatically using Makefile
 We can build, create and run container simply by using Makefile. If you are a windows user, you should be installing MinGW first. For Linux and user, simply follow this command :
 ```
     make docker
