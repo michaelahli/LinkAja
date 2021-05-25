@@ -56,3 +56,28 @@ func (u *uc) GetAccountID(urlstring string) (int, error) {
 	}
 	return account_id, nil
 }
+
+func (u *uc) GetBalanceInfo(account_number int) (*models.GetBalance, error) {
+	var (
+		res models.GetBalance
+		acc models.AccountModel
+		cus models.CustomerModel
+	)
+
+	err := u.repo.FindOne(&acc, bson.M{"account_number": account_number}, "account")
+	if err != nil {
+		return nil, err
+	}
+	res.AccountNumber = acc.AccountNumber
+	res.Balance = acc.Balance
+
+	customer_number := acc.CustomerNumber
+
+	err = u.repo.FindOne(&cus, bson.M{"customer_number": customer_number}, "customer")
+	if err != nil {
+		return nil, err
+	}
+	res.CustomerName = cus.CustomerName
+
+	return &res, nil
+}

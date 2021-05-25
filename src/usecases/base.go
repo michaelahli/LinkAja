@@ -1,6 +1,9 @@
 package usecases
 
-import "LinkaAja/src/repositories"
+import (
+	"LinkaAja/src/models"
+	"LinkaAja/src/repositories"
+)
 
 type uc struct {
 	repo repositories.Repo
@@ -9,6 +12,7 @@ type uc struct {
 type UC interface {
 	GetAccountID(urlstring string) (int, error)
 	GetAllData() (interface{}, error)
+	GetBalanceInfo(account_number int) (*models.GetBalance, error)
 }
 
 func NewUC(repo repositories.Repo) UC {

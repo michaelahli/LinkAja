@@ -14,3 +14,12 @@ func (r *repo) FindAll(where interface{}, tableName string, opt *options.FindOpt
 	}
 	return result, nil
 }
+
+func (r *repo) FindOne(res interface{}, where interface{}, tableName string) error {
+	result := r.db.Collection(tableName).FindOne(context.TODO(), where)
+	if result.Err() != nil {
+		return result.Err()
+	}
+	result.Decode(res)
+	return nil
+}
