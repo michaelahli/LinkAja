@@ -52,6 +52,7 @@ This server can be executed by 3 ways :
 1. Manually from project folder
 2. Manually by docker
 3. Automatically using docker compose file 
+4. Automatically using Makefile
 
 ## Manually from project folder
 First thing first we have to install all of the dependencies by typing this command in terminal :
@@ -86,6 +87,16 @@ First we have to build/pull docker image according to the instructions above. Af
     docker-compose up -d
 ```
 After this command, our server is started and ready to use.
+## Automatically using Makefile
+We can build, create and run container simply by using Makefile. If you are a windows user, you should be installing MinGW first. For Linux and user, simply follow this command :
+```
+    make docker
+```
+for windows user, after installing MinGW. Please copy the following command and run it in your command promp:
+```
+    mingw32-make docker
+```
+
 
 # Contributing
 Pull request are welcome. For major changes, please open an issue first to discuss what you would like to change.
