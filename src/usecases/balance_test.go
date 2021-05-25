@@ -2,9 +2,12 @@ package usecases
 
 import (
 	"LinkaAja/packages"
+	"LinkaAja/src/models"
 	"LinkaAja/src/repositories"
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func init() {
@@ -69,14 +72,45 @@ func TestAccountID(t *testing.T) {
 					t.Errorf("GetAccountID() Method error got %v, wantErr %v", err, testitem.wantErr)
 					return
 				}
-				if got1 != testitem.want {
-					t.Errorf("GetAccountID() Method got %v , want %v", got1, testitem.want)
-					return
-				}
+				assert.Equal(t, testitem.want, got1, "Cannot Get Correct Account ID")
 			})
 	}
 }
 
 func TestGetBalanceInfo(t *testing.T) {
-
+	db := packages.LoadDatabase()
+	repository := repositories.NewRepo(db)
+	usecase := NewUC(repository)
+	type args struct {
+		account_number int
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    *models.GetBalance
+		wantErr bool
+	}{
+		{
+			name: "Success",
+			args: args{
+				account_number: 555001,
+			},
+			want: &models.GetBalance{
+				AccountNumber: 555001,
+				CustomerName:  "Bob Martin",
+				Balance:       10000,
+			},
+			wantErr: false,
+		},
+	}
+	for _, testitem := range tests {
+		t.Run(testitem.name, func(t *testing.T) {
+			got1, err := usecase.GetBalanceInfo(testitem.args.account_number)
+			if (err != nil) != testitem.wantErr {
+				t.Errorf("GetBalanceInfo() Method error got %v, wantErr %v", err, testitem.wantErr)
+				return
+			}
+			assert.Equal(t, testitem.want, got1, "Cannot Get Desired Balance")
+		})
+	}
 }

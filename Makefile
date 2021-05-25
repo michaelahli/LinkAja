@@ -10,6 +10,10 @@ gocompile:
 	GOOS=linux GOARCH=386 go build -o bin/main-linux-386 main.go
 	GOOS=windows GOARCH=386 go build -o bin/main-windows-386 main.go
 
+gotest:
+	cd src/usecases/
+	go test ./...
+
 build:
 	docker build --tag michaelahli/linkaja:beta
 
