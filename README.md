@@ -101,7 +101,7 @@ for windows user, after installing MinGW. Please copy the following command and 
     mingw32-make docker
 ```
 
-# Testing
+# Unit Testing
 This project already contain some test unit for usecases's functions. There are 2 different ways to test this projects:
 
 1. Manual test
