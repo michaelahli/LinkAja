@@ -102,6 +102,14 @@ func TestGetBalanceInfo(t *testing.T) {
 			},
 			wantErr: false,
 		},
+		{
+			name: "Not Found",
+			args: args{
+				account_number: 123456,
+			},
+			want:    nil,
+			wantErr: true,
+		},
 	}
 	for _, testitem := range tests {
 		t.Run(testitem.name, func(t *testing.T) {
