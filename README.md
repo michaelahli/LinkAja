@@ -63,6 +63,10 @@ and then we are ready to execute the server by this following command :
 ```
     go run main.go
 ```
+or we can simply just use Makefile by this following command :
+```
+    make gorun
+```
 
 ## Manually by docker
 First we must have docker installed in our PC. Then we have to build the docker image by using the following command :
