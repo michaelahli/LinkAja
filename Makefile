@@ -18,7 +18,7 @@ build:
 	docker build --tag michaelahli/linkaja:beta .
 
 create:
-	docker container create --name linkaja-container -p 8080:8080 -e SERVER_PORT=8080 -e MONGO_DB=LinkAja -e MONGO_URI="mongodb+srv://teredict:25285282@teredict.jkdyu.mongodb.net/LinkAja?retryWrites=true&w=majority" -e CORS_HEADER=x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin -e CORS_METHOD=OPTION,GET,PUT,POST,DELETE -e CORS_ORIGIN='*' michaelahli/linkaja:beta
+	docker container create --name linkaja-container -p 8080:8080 -e SERVER_PORT=8080 -e MONGO_DB=LinkAja -e MONGO_URI="mongodb://localhost:27017/" -e CORS_HEADER=x-api-key,Authorization,Content-Type,Origin,Accept,Access-Control-Allow-Headers,Access-Control-Request-Method,Access-Control-Request-Headers,Access-Control-Allow-Origin -e CORS_METHOD=OPTION,GET,PUT,POST,DELETE -e CORS_ORIGIN='*' michaelahli/linkaja:beta
 
 start:
 	docker container start linkaja-container
@@ -26,4 +26,4 @@ start:
 compose :
 	docker-compose up -d
 
-docker: build create start
+docker: build compose
