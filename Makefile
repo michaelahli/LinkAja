@@ -26,4 +26,7 @@ start:
 compose :
 	docker-compose up -d
 
+stop:
+	docker container stop linkaja-container
+
 docker: build compose

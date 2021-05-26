@@ -47,6 +47,23 @@ curl --request POST 'http://localhost:8080/account/{from_account_number}/transfe
 }
 ```
 
+# Initialize
+This project do not serve any data assets for you anymore. So you'll need to create data in your own mongoDB database. There are minimal 2 several table in your dataset, you can copy dataset below :
+## Customer Dataset
+
+| Customer Number | Name 
+| :---: | :---: |
+| Bob Martin | 555001 |
+| Linus Torvalds | 555002 |
+
+## Customer Dataset
+
+| Account Number | Customer Number | Balance |
+| :---: | :---: | :---: |
+| 555001 | 1001 | 10000 |
+| 555002 | 1002 | 15000 |
+
+
 # Usage
 This server can be executed by 4 ways :
 1. Manually from project folder
