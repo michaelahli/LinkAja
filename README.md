@@ -56,7 +56,7 @@ This project do not serve any data assets for you anymore. So you'll need to cre
 | Bob Martin | 555001 |
 | Linus Torvalds | 555002 |
 
-## Customer Dataset
+## Account Dataset
 
 | Account Number | Customer Number | Balance |
 | :---: | :---: | :---: |
